@@ -11,17 +11,25 @@ import Giscus from "@components/Giscus.astro";
 import ArrowCard from "@components/ArrowCard.astro";
 import { TAGS } from "@consts";
 
+type BlogPost = CollectionEntry<'blog'>;
+
+type Props = {
+  tag: string;
+  posts: BlogPost[];
+};
+
+const { tag, posts } = Astro.props;
+
 export async function getStaticPaths() {
     const posts = await getCollection('blog');
     const tags = posts.flatMap((post) => post.data.tags);
-    return tags.map((tag) => ({
-        params: { slug: tag },
-        props: { tag, posts: posts.filter((post) => post.data?.tags?.includes(tag as string)) },
+    const uniqueTags = Array.from(new Set(tags));
+
+    return uniqueTags.map((tag) => ({
+      params: { slug: tag },
+      props: { tag, posts: posts.filter((post) => post.data.tags?.includes(tag)) },
     }));
 }
-
-const { tag, posts } = Astro.props;
-type Props = CollectionEntry<'blog'>;
 ---
 
 <Layout title={`Posts tagged with "${tag}"`} description={`A collection of posts tagged with ${tag}.`}>
@@ -33,8 +41,8 @@ type Props = CollectionEntry<'blog'>;
         </div>
         <div class="space-y-4">
           {
-            posts.map((post: Props) => (
-              <section class="animate space-y-4" key={post.id}>
+            posts.map((post) => (
+              <section class="animate space-y-4">
                 <div>
                   <ul class="not-prose flex flex-col gap-4">
                       <li>
