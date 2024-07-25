@@ -3,11 +3,11 @@ import type { CollectionEntry } from "astro:content";
 import { Image } from "astro:assets";
 
 type Props = {
-  entry: CollectionEntry<"projects">;
+  entry: CollectionEntry<"publications">;
 };
 
 const { entry } = Astro.props as {
-  entry: CollectionEntry<"projects">;
+  entry: CollectionEntry<"publications">;
 };
 
 const splitStr = (authors: string | undefined, targetAuthor: string) => {
