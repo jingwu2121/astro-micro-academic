@@ -1,0 +1,17 @@
+---
+import 'bootstrap-icons/font/bootstrap-icons.css';
+
+export interface Props {
+    URL: string;
+    icon: string;
+}
+  
+const { URL, icon } = Astro.props;
+---
+<a
+href={URL}
+target={"_blank"}
+class={
+"inline-block text-xl decoration-black/30 dark:decoration-white/30 hover:decoration-black/50 focus-visible:decoration-black/50 dark:hover:decoration-white/50 dark:focus-visible:decoration-white/50 text-current hover:text-black focus-visible:text-black dark:hover:text-white dark:focus-visible:text-white transition-colors duration-300 ease-in-out"}>
+<i class={`bi bi-${icon}`}></i>
+</a>
