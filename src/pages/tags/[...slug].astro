@@ -2,12 +2,6 @@
 import { type CollectionEntry, getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
-import FormattedDate from "@components/FormattedDate.astro";
-import { readingTime } from "@lib/utils";
-import BackToPrevious from "@components/BackToPrevious.astro";
-import PostNavigation from "@components/PostNavigation.astro";
-import TableOfContents from "@components/TableOfContents.astro";
-import Giscus from "@components/Giscus.astro";
 import ArrowCard from "@components/ArrowCard.astro";
 import { TAGS } from "@consts";
 
@@ -21,14 +15,14 @@ type Props = {
 const { tag, posts } = Astro.props;
 
 export async function getStaticPaths() {
-    const posts = await getCollection('blog');
-    const tags = posts.flatMap((post) => post.data.tags);
-    const uniqueTags = Array.from(new Set(tags));
+  const posts = await getCollection('blog');
+  const tags = posts.flatMap((post) => post.data.tags || []);
+  const uniqueTags = Array.from(new Set(tags.filter((tag): tag is string => typeof tag === 'string')));
 
-    return uniqueTags.map((tag) => ({
-      params: { slug: tag },
-      props: { tag, posts: posts.filter((post) => post.data.tags?.includes(tag)) },
-    }));
+  return uniqueTags.map((tag) => ({
+    params: { slug: tag },
+    props: { tag, posts: posts.filter((post) => post.data.tags?.includes(tag)) },
+  }));
 }
 ---
 
