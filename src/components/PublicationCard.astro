@@ -10,11 +10,13 @@ const { entry } = Astro.props as {
   entry: CollectionEntry<"projects">;
 };
 
-const splitStr = (authors: string, targetAuthor: string) => {
+const splitStr = (authors: string | undefined, targetAuthor: string) => {
+  if (!authors) return [];
   const parts = authors.split(new RegExp(`(${targetAuthor})`, 'g'));
   return parts;
 };
-const decomposeURL = (URL: string) => {
+const decomposeURL = (URL: string | undefined) => {
+  if (!URL) return { text: '', url: '' };
   const parts = URL.split(": ");
   return { text: parts[0], url: parts[1] };
 };
@@ -31,8 +33,8 @@ const authorsParts = splitStr(entry.data.authors, 'John B');
   class="w-full not-prose group relative grid grid-cols-auto md:grid-cols-[204px_auto] gap-4 rounded-lg items-center border border-black/15 px-4 py-3  transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white"
 >
   <Image
-  src={entry.data.img}
-  alt={entry.data.imgAlt}
+  src={entry.data.img ?? ''}
+  alt={entry.data.imgAlt ?? ''}
   width={640}
   height={480}
   class="sm:w-[240px] sm:h-[135px] shadow-sm rounded-md sm:mr-6 hover:opacity-80 transition hidden md:flex"
@@ -47,7 +49,7 @@ const authorsParts = splitStr(entry.data.authors, 'John B');
           {entry.data.title}
         </div>
         <div class="text-sm w-full">
-          {authorsParts.map((part) =>
+          {authorsParts.map((part:any) =>
             part === 'John B' ? <strong>{part}</strong> : part
           )}
         </div>
