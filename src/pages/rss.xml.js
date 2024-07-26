@@ -5,11 +5,17 @@ import { getCollection } from "astro:content";
 export async function GET(context) {
   const blog = (await getCollection("blog")).filter((post) => !post.data.draft);
 
-  const publications = (await getCollection("publications")).filter(
-    (publication) => !publication.data.draft,
-  );
+  // const publications = (await getCollection("publications")).filter(
+  //   (publication) => !publication.data.draft,
+  // );
 
-  const items = [...blog, ...publications].sort(
+  // const items = [...blog, ...publications].sort(
+  //   (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf(),
+  // );
+
+  const filteredBlogs = posts.filter(post => post.data.tags && post.data.tags.includes('rss-feed'));
+
+  const items = [...filteredBlogs].sort(
     (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf(),
   );
 
