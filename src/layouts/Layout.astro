@@ -5,6 +5,7 @@ import Footer from "@components/Footer.astro";
 import PageFind from "@components/PageFind.astro";
 import { SITE } from "@consts";
 import '../styles/katex.css';
+import ProgressBar from "@components/ProgressBar.astro";
 
 type Props = {
   title: string;
@@ -22,6 +23,7 @@ const { title, description } = Astro.props;
   </head>
   <body>
     <Header />
+    <ProgressBar />
     <main>
       <slot />
     </main>
