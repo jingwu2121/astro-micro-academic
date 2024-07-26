@@ -1,4 +1,4 @@
-import type { Metadata, Site, Socials } from "@types";
+import type { Metadata, Site } from "@types";
 
 export const SITE: Site = {
   TITLE: "Astro Micro Academics",
@@ -8,7 +8,7 @@ export const SITE: Site = {
   NUM_PROJECTS_ON_HOMEPAGE: 3,
 };
 
-export const SITEURL = 'https://astro-micro-academic.vercel.app'
+export const SITEURL = 'https://astro-micro-academic.vercel.app' // Update here to link the RSS icon to your website rss
 
 export const HOME: Metadata = {
   TITLE: "Home",
@@ -43,18 +43,3 @@ export const ABOUT: Metadata = {
   DESCRIPTION:
     "A self-intro",
 };
-
-export const SOCIALS: Socials = [
-  {
-    NAME: "X (formerly Twitter)",
-    HREF: "https://twitter.com/boogerbuttcheeks",
-  },
-  {
-    NAME: "GitHub",
-    HREF: "https://github.com/trevortylerlee",
-  },
-  {
-    NAME: "LinkedIn",
-    HREF: "https://www.linkedin.com/in/trevortylerlee",
-  },
-];

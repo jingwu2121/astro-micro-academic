@@ -75,7 +75,7 @@ export const ABOUT: Metadata = {
 
 ---
 
-## Add your social media links
+## ~~Add your social media links~~ Removed in Micro Academics
 
 ```ts
 // src/consts.ts
