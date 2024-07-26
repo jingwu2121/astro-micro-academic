@@ -1,3 +1,13 @@
+# Astro-Micro-Academics 
+Academic Astro theme is an academic version of [Astro-Micro](https://github.com/trevortylerlee/astro-micro) and [Nano](https://astro-nano-demo.vercel.app/). 
+It is tailored for researchers. 
+
+Micro Academics adds features like tags, and blog math support and also inherits [Pagefind](https://pagefind.app/) for search, [Giscus](https://giscus.app/) for comments, from Astro Micro.
+
+Micro Academics still comes with everything great about Micro and Nano — full type safety, a sitemap, an RSS feed, and Markdown + MDX support. Styled with TailwindCSS and preconfigured with system, light, and dark themes.
+
+![teaser](./assets/teaser-1.png)
+
 ## Install Astro-Micro-Academics 
 
 Clone the [repository](https://github.com/jingwu2121/astro-micro-academic).
