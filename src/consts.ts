@@ -5,8 +5,11 @@ export const SITE: Site = {
   DESCRIPTION: "Astro Micro Academics is for academic user.",
   EMAIL: "youremial@gmail.com",
   NUM_POSTS_ON_HOMEPAGE: 2,
-  NUM_PROJECTS_ON_HOMEPAGE: 3,
+  NUM_PUBLICATIONS_ON_HOMEPAGE: 3,
+  SITEURL: 'https://astro-micro-academic.vercel.app' // Update here to link the RSS icon to your website rss
 };
+
+export const HIGHLIGHTAUTHOR = "John B"
 
 export const SITEURL = 'https://astro-micro-academic.vercel.app' // Update here to link the RSS icon to your website rss
 

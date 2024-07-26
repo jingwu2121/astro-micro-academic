@@ -43,7 +43,7 @@ export const SITE: Site = {
   DESCRIPTION: "Astro Micro is an accessible theme for Astro.",
   EMAIL: "trevortylerlee@gmail.com",
   NUM_POSTS_ON_HOMEPAGE: 3,
-  NUM_PROJECTS_ON_HOMEPAGE: 3,
+  NUM_PUBLICATIONS_ON_HOMEPAGE: 3,
 };
 ```
 
@@ -53,7 +53,7 @@ export const SITE: Site = {
 | DESCRIPTION  | Yes | Used in SEO and RSS.                                 |
 | EMAIL        | Yes | Displayed in contact section.                        |
 | NUM_POSTS    | Yes | Limit number of posts on home page.                  |
-| NUM_PROJECTS | Yes | Limit number of projects on home page.               |
+| NUM_PUBLICATIONS | Yes | Limit number of research on home page.               |
 
 ---
 

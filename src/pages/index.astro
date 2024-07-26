@@ -17,9 +17,8 @@ const blog = (await getCollection("blog"))
 const publications: CollectionEntry<"publications">[] = (
   await getCollection("publications")
 )
-  .filter((publication) => !publication.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0, SITE.NUM_PROJECTS_ON_HOMEPAGE);
+  .slice(0, SITE.NUM_PUBLICATIONS_ON_HOMEPAGE);
 ---
 
 <Layout title={HOME.TITLE} description={HOME.DESCRIPTION}>
@@ -117,7 +116,7 @@ const publications: CollectionEntry<"publications">[] = (
         <section class="animate space-y-6">
           <div class="flex flex-wrap items-center justify-between gap-y-2">
             <h2 class="font-semibold text-black dark:text-white">
-              Recent projects
+              Recent research
             </h2>
             <Link href="/publications"> See all research </Link>
           </div>

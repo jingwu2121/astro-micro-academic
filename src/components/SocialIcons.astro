@@ -1,6 +1,6 @@
 ---
 import SocialIcon from "@components/SocialIcon.astro";
-import { SITEURL } from "@consts";
+import { SITE } from "@consts";
 
 export interface Props {
     icon_size: string
@@ -14,5 +14,5 @@ const { icon_size } = Astro.props;
     <SocialIcon icon_size={icon_size} URL="#" icon="linkedin"/>
     <SocialIcon icon_size={icon_size} URL="#" icon="envelope-fill"/>
     <SocialIcon icon_size={icon_size} URL="#" icon="mortarboard-fill"/>
-    <SocialIcon icon_size={icon_size} URL={`${SITEURL}/rss.xml`} icon="rss-fill"/>
+    <SocialIcon icon_size={icon_size} URL={`${SITE.SITEURL}/rss.xml`} icon="rss-fill"/>
 </ul>

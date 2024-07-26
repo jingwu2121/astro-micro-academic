@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import { Image } from "astro:assets";
+import { HIGHLIGHTAUTHOR } from "@consts";
 
 type Props = {
   entry: CollectionEntry<"publications">;
@@ -25,7 +26,7 @@ const dataLink = decomposeURL(entry.data.dataURL);
 const paperLink = decomposeURL(entry.data.paperURL);
 const codeLink = decomposeURL(entry.data.codeURL);
 const webLink = decomposeURL(entry.data.webURL);
-const authorsParts = splitStr(entry.data.authors, 'John B');
+const authorsParts = splitStr(entry.data.authors, HIGHLIGHTAUTHOR);
 
 ---
 
@@ -43,21 +44,21 @@ const authorsParts = splitStr(entry.data.authors, 'John B');
 
 
   <div class="flex items-center h-full">
-    <div class="flex flex-col text-justify">
+    <div class="flex flex-col">
       <div class="w-full">
-        <div class="text-lg font-semibold w-full">
+        <div class="text-md font-semibold w-full">
           {entry.data.title}
         </div>
         <div class="text-sm w-full">
           {authorsParts.map((part:any) =>
-            part === 'John B' ? <strong>{part}</strong> : part
+            part === HIGHLIGHTAUTHOR ? <u><strong>{part}</strong></u> : part
           )}
         </div>
         <div class="text-sm w-full">
-          {paperLink.url!="" && <a class="text-orange-500 underline hover:text-green-300 visited:text-indigo-400" href={paperLink.url}>{paperLink.text}</a>}
-          {codeLink.url!="" && <a class="text-orange-500 underline hover:text-green-300 visited:text-indigo-400" href={codeLink.url}>{codeLink.text}</a>}
-          {webLink.url!="" && <a class="text-orange-500 underline hover:text-green-300 visited:text-indigo-400" href={webLink.url}>{webLink.text}</a>}
-          {dataLink.url!="" && <a class="text-orange-500 underline hover:text-green-300 visited:text-indigo-400" href={dataLink.url}>{dataLink.text}</a>}
+          {paperLink.url!="" && <a class="underline hover:text-cyan-500 text-orange-500 dark:hover:text-cyan-500 transition-colors duration-300 ease-in-out visited:text-indigo-400" target="_blank" href={paperLink.url}>{paperLink.text}</a>}
+          {codeLink.url!="" && <a class="underline hover:text-cyan-500 text-orange-500 dark:hover:text-cyan-500 transition-colors duration-300 ease-in-out visited:text-indigo-400" target="_blank" href={codeLink.url}>{codeLink.text}</a>}
+          {webLink.url!="" && <a class="underline hover:text-cyan-500 text-orange-500 dark:hover:text-cyan-500 transition-colors duration-300 ease-in-out visited:text-indigo-400" target="_blank" href={webLink.url}>{webLink.text}</a>}
+          {dataLink.url!="" && <a class="underline hover:text-cyan-500 text-orange-500 dark:hover:text-cyan-500 transition-colors duration-300 ease-in-out visited:text-indigo-400" target="_blank" href={dataLink.url}>{dataLink.text}</a>}
         </div>
         <div class="text-sm">
           In <div class="inline italic">{entry.data.pub}</div>

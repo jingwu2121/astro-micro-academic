@@ -11,11 +11,11 @@ const { institution, time, job_title, location, description } = Astro.props;
 ---
 
 <div class="py-5 px-8">
-    <div class="flex justify-between text-lg font-bold">
+    <div class="flex justify-between text-sm font-bold md:text-lg">
         <div>{institution}</div>
         <div>{time}</div>
     </div>
-    <div class="flex justify-between">
+    <div class="flex justify-between text-xs md:text-md">
         <div class="italic">{job_title}</div>
         <div>{location}</div>
     </div>
