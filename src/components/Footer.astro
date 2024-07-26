@@ -2,14 +2,14 @@
 import Container from "@components/Container.astro";
 import { SITE } from "@consts";
 import BackToTop from "@components/BackToTop.astro";
+import SocialIcons from "./SocialIcons.astro";
 ---
 
 <footer class="animate">
   <Container>
-    <div class="relative">
-      <div class="absolute -top-12 right-0">
-        <BackToTop />
-      </div>
+    <div class="flex justify-between my-2">
+      <SocialIcons />
+      <BackToTop />
     </div>
     <div class="flex items-center justify-between">
       <div>&copy; {new Date().getFullYear()} • {SITE.TITLE} 👀<br>
