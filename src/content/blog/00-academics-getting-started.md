@@ -5,6 +5,8 @@ date: "2024-07-26"
 tags: ['guide', 'tutorial']
 ---
 
+:exclamation: Also refer to [Old] posts to see examples and changes. Some changes are removed in this version, which are marked. 
+
 ## Install Astro-Micro-Academics 
 
 Clone the [repository](https://github.com/jingwu2121/astro-micro-academic).
