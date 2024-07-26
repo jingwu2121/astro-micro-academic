@@ -6,8 +6,8 @@ import ArrowCard from "@components/ArrowCard.astro";
 import Link from "@components/Link.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
-import SocialIcon from "@components/SocialIcon.astro";
 import PublicationCard from "@components/PublicationCard.astro";
+import SocialIcons from "@components/SocialIcons.astro";
 
 const blog = (await getCollection("blog"))
   .filter((post) => !post.data.draft)
@@ -144,13 +144,7 @@ const publications: CollectionEntry<"publications">[] = (
               hi, reach out on social media or send me an email.
             </p>
           </article>
-          <ul class="not-prose flex flex-wrap gap-2">
-            <SocialIcon URL="#" icon="twitter-x"/>
-            <SocialIcon URL="#" icon="github"/>
-            <SocialIcon URL="#" icon="linkedin"/>
-            <SocialIcon URL="#" icon="envelope-fill"/>
-            <SocialIcon URL="#" icon="mortarboard-fill"/>
-          </ul>
+          <SocialIcons />
         </section>
       </div>
     </aside>
