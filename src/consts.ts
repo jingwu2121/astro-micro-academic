@@ -8,6 +8,8 @@ export const SITE: Site = {
   NUM_PROJECTS_ON_HOMEPAGE: 3,
 };
 
+export const SITEURL = 'https://astro-micro-academic.vercel.app'
+
 export const HOME: Metadata = {
   TITLE: "Home",
   DESCRIPTION: "Astro Micro is an accessible theme for Astro.",
