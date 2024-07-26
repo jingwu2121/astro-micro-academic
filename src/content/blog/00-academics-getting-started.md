@@ -1,3 +1,10 @@
+---
+title: "[Tutorial] Getting started with Astro-Micro-Academics"
+description: "Hit the ground running."
+date: "2024-07-26"
+tags: ['guide', 'tutorial']
+---
+
 ## Install Astro-Micro-Academics 
 
 Clone the [repository](https://github.com/jingwu2121/astro-micro-academic).
@@ -179,3 +186,69 @@ export const ABOUT: Metadata = {
 | :---------- | :-- | :--------------------------------------------- |
 | TITLE       | Yes | Displayed in browser tab. Used in SEO and RSS. |
 | DESCRIPTION | Yes | Used in SEO and RSS.                           |
+
+---
+
+## Deploy the site
+
+To set up RSS and Giscus, it's easier if the site is deployed and has a URL for you to use. Instantly deploy to Vercel or Netlify by clicking the buttons below.
+
+<div class="flex gap-2">
+  <a target="_blank" aria-label="Deploy with Vercel" href="https://vercel.com/new/clone?repository-url=https://github.com/trevortylerlee/astro-micro">
+    <img src="/deploy_vercel.svg" />
+  </a>
+  <a target="_blank" aria-label="Deploy with Netlify" href="https://app.netlify.com/start/deploy?repository=https://github.com/trevortylerlee/astro-micro">
+    <img src="/deploy_netlify.svg" />
+  </a>
+</div>
+
+To deploy manually see [Astro's docs](https://docs.astro.build/en/guides/deploy/).
+
+To deploy to Github, see [here](https://docs.astro.build/en/guides/deploy/github/). 
+
+
+## Set up Giscus (from Astro Micro)
+
+Follow the steps at [giscus.app](https://giscus.app). Once you get your  custom Giscus script from that site, go to `Giscus.astro` and replace that script with your own.
+
+```js
+// src/components/Giscus.astro
+
+<script
+  is:inline
+  src="https://giscus.app/client.js"
+  data-repo="trevortylerlee/astro-micro"
+  data-repo-id="R_kgDOL_6l9Q"
+  data-category="Announcements"
+  data-category-id="DIC_kwDOL_6l9c4Cfk55"
+  data-mapping="pathname"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="top"
+  data-theme="preferred_color_scheme"
+  data-lang="en"
+  data-loading="lazy"
+  crossorigin="anonymous"
+  async></script>
+
+```
+
+To change the Giscus themes used, edit the `setGiscusTheme` function in `Head.astro`.
+
+```js
+// src/components/Head.astro
+
+const setGiscusTheme = () => {
+  const giscus = document.querySelector(".giscus-frame");
+
+  const isDark = document.documentElement.classList.contains("dark");
+
+  if (giscus) {
+    const url = new URL(giscus.src);
+    // Change "dark" and "light" to other Giscus themes
+    url.searchParams.set("theme", isDark ? "dark" : "light");
+    giscus.src = url.toString();
+  }
+};
+```

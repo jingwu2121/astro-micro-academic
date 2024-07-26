@@ -5,7 +5,7 @@ import remarkToc from "remark-toc";
 import { rehypeAccessibleEmojis } from "rehype-accessible-emojis";
 import rehypeKatex from "rehype-katex";
 import remarkMath from "remark-math";
-
+import remarkEmoji from 'remark-emoji';
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import pagefind from "astro-pagefind";
@@ -19,7 +19,7 @@ export default defineConfig({
       theme: "css-variables",
     },
     rehypePlugins: [rehypeHeadingIds, rehypeAccessibleEmojis, rehypeKatex],
-    remarkPlugins: [remarkToc, remarkMath],
+    remarkPlugins: [remarkToc, remarkMath, remarkEmoji],
   },
   server: { port: 1234, host: true}
 });

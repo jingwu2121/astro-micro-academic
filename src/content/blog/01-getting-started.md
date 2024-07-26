@@ -1,5 +1,5 @@
 ---
-title: "Getting started with Astro-Micro"
+title: "[Old] Getting started with Astro-Micro"
 description: "Hit the ground running."
 date: "2024-03-22"
 tags: ['guide', 'start']
@@ -116,7 +116,7 @@ To set up RSS and Giscus, it's easier if the site is deployed and has a URL for 
 
 To deploy manually see [Astro's docs](https://docs.astro.build/en/guides/deploy/).
 
-## Set up RSS
+## ~~Set up RSS~~ New config in Astro Micro Academics
 
 Change the `site` option to the deployed site's URL.
 

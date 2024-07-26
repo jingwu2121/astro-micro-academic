@@ -24,6 +24,7 @@
     "clsx": "^2.1.1",
     "rehype-accessible-emojis": "^0.3.2",
     "rehype-katex": "^7.0.0",
+    "remark-emoji": "^5.0.1",
     "remark-math": "^6.0.0",
     "remark-toc": "^9.0.0",
     "tailwind-merge": "^2.3.0",

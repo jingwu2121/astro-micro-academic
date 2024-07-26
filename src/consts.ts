@@ -11,8 +11,6 @@ export const SITE: Site = {
 
 export const HIGHLIGHTAUTHOR = "John B"
 
-export const SITEURL = 'https://astro-micro-academic.vercel.app' // Update here to link the RSS icon to your website rss
-
 export const HOME: Metadata = {
   TITLE: "Home",
   DESCRIPTION: "Astro Micro is an accessible theme for Astro.",
