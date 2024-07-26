@@ -7,7 +7,6 @@ import PublicationCard from "@components/PublicationCard.astro";
 // import PublicationCard from "@components/PublicationCard";
 
 const publications = (await getCollection("publications"))
-  .filter((publication) => !publication.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
