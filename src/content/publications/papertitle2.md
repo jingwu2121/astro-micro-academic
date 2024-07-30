@@ -1,6 +1,6 @@
 ---
-title: "Diffusion Models Beat GANs on Image Synthesis"
-description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias earum quod quo repellat blanditiis est iste eos dolorem! Voluptatibus corporis totam sed unde est iusto neque iure natus adipisci omnis."
+title: "Paper Title1"
+description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. "
 date: "2024-07-26"
 authors: "John B*, Jon A*, Frank C, John B, Jon A, Frank C, "
 paperURL: "Paper: https://astro-sphere-demo.vercel.app"
