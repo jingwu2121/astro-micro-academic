@@ -2,7 +2,7 @@
 
 [![Badge with Logo](https://img.shields.io/badge/Astro-Page-blue)
 ](https://portal.astro.build/themes/astro-micro-academics/)
-[![Badge with Logo](https://img.shields.io/badge/Live-Demo)](https://astro-micro-academic.vercel.app/)
+[![Badge with Logo](https://img.shields.io/badge/Live-Demo-cyan)](https://astro-micro-academic.vercel.app/)
 
 
 Astro Micro Academic is an academic version of [Astro-Micro](https://github.com/trevortylerlee/astro-micro) and [Nano](https://astro-nano-demo.vercel.app/). 
