@@ -67,12 +67,14 @@ const { Content, headings } = await post.render();
       <div class="font-base text-sm ">
         {post.data.tags && post.data.tags.length > 0 ? (
           post.data.tags.map((tag) => (
-            <a
-              href={`/tags/${tag}`}
-              class="mx-1 rounded-full px-2 py-1 bg-orange-300 hover:bg-cyan-200 dark:bg-orange-500 dark:hover:bg-cyan-500 transition-colors duration-300 ease-in-out"
-            >
-              #{tag}
-            </a>
+            <div class="inline-block my-1">
+              <a
+                href={`/tags/${tag}`}
+                class="mx-1 rounded-full px-2 py-1 bg-orange-300 hover:bg-cyan-200 dark:bg-orange-500 dark:hover:bg-cyan-500 transition-colors duration-300 ease-in-out"
+              >
+                #{tag}
+              </a>
+            </div>
           ))
         ) : (
           <span>No tags available</span>
