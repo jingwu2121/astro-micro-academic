@@ -190,7 +190,7 @@ const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
     const userTheme = localStorage.theme;
 
     if (userTheme === "light" || userTheme === "dark") {
-      toggleTheme(userTheme === "dark");
+      toggleTheme(true); // set default to dark theme
     } else {
       toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
     }
