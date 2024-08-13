@@ -4,7 +4,6 @@
 ](https://astro.build/themes/details/astro-micro-academics)
 [![Badge with Logo](https://img.shields.io/badge/Live-Demo-cyan)](https://astro-micro-academic.vercel.app/)
 
-
 Astro Micro Academic is an academic version of [Astro-Micro](https://github.com/trevortylerlee/astro-micro) and [Nano](https://astro-nano-demo.vercel.app/). 
 It is tailored for researchers. 
 
@@ -13,6 +12,9 @@ Micro Academics adds features like tags, and blog math support and also inherits
 Micro Academics still comes with everything great about Micro and Nano — full type safety, a sitemap, an RSS feed, and Markdown + MDX support. Styled with TailwindCSS and preconfigured with system, light, and dark themes.
 
 ![teaser](./assets/teaser-1.png)
+
+## News
+✨ I've got a detailed blog about building and deploying your website using this template! Check it out [here](https://jingwu2121.github.io/blog/01-build-deploy-website/) 
 
 ## Install Astro-Micro-Academics 
 
